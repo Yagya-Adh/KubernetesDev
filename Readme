@@ -1,0 +1,25 @@
+PULLIING IMAGES:
+
+    docker pull yagyaadhikari/app-mongo-node:01
+
+RUN MONGO DB:
+
+    docker run -d -p 27017:27017 --network my-net --name mongo mongo
+
+TO RUN OUR Node App:
+
+    docker run --network my-net -p 3000:3000 --name myapp yagyaadhikari/app-mongo-node:01
+
+    
+
+
+
+
+
+
+    
+---
+    Multiple Container:: 
+         there are two ways:- 
+         Run multiple container in same pod
+         Run each container in separate pod
