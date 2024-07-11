@@ -14,6 +14,12 @@ To Service ::
 
     > minikube service service-my-node-app 
 
+To stop or, Delete:
+    > kubectl delete -f <deploymrnfile.yml>
+        eg:- kubectl delete -f deployment-node-app.yml
+
+
+        
 
 
 
