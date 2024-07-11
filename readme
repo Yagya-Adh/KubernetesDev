@@ -1,3 +1,23 @@
+Using .yml file:
+
+TO Deployment ::
+    > kubectl apply -f <deploymentfile.yml>
+        eg:- kubectl apply -f deployment-node-app.yml 
+    
+    > kubectl get deployment
+
+    > kubectl get pods 
+    
+To Service ::
+    > kubectl  apply -f <servicefile.yml>
+        eg:- kubectl apply -f service-node-app.yml
+
+    > minikube service service-my-node-app 
+
+
+
+
+
 PULLIING IMAGES:
 
     docker pull yagyaadhikari/app-mongo-node:01
