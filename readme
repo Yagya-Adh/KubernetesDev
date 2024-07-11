@@ -35,7 +35,6 @@ TO RUN OUR Node App:
 
         
 ---
-    Multiple Container:: 
-         there are two ways:- 
+    Multiple Container:   (there are two ways: )
          Run multiple container in same pod
          Run each container in separate pod
