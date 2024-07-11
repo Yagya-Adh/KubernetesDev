@@ -18,15 +18,12 @@ To stop or, Delete:
     > kubectl delete -f <deploymrnfile.yml>
         eg:- kubectl delete -f deployment-node-app.yml
 
-
-        
-
-
+     
 
 
 PULLIING IMAGES:
 
-    docker pull yagyaadhikari/app-mongo-node:01
+    docker pull yagyaadhikari/app-mongo-node:2.0.2
 
 RUN MONGO DB:
 
@@ -34,16 +31,9 @@ RUN MONGO DB:
 
 TO RUN OUR Node App:
 
-    docker run --network my-net -p 3000:3000 --name myapp yagyaadhikari/app-mongo-node:01
+    docker run --network my-net -p 3000:3000 --name myapp yagyaadhikari/app-mongo-node:2.0.2
 
-    
-
-
-
-
-
-
-    
+        
 ---
     Multiple Container:: 
          there are two ways:- 
