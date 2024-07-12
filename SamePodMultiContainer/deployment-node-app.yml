@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Unique key of the Deployment instance
+  name: my-mongo-node-app # change here..............................
+spec:
+  # 3 Pods should exist at all times.
+  replicas: 5 # how many instances ..............................
+  selector:
+    matchLabels:
+      app: my-mongo-node-app
+
+      # For pods inside deployment....................template.........
+  template:
+    metadata:
+      labels:
+        # Apply this label to pods and default
+        # the Deployment label selector to this value
+        app: my-mongo-node-app
+    spec:
+      containers:
+      - name: my-mongo-node-app
+        image: yagyaadhikari/app-mongo-node:2.3.0
+      - name: mongodb
+        image: mongo:latest
