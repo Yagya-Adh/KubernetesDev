@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app # change here..............................
+spec:
+  replicas: 1 # how many instances ..............................
+  selector:
+    matchLabels:
+      app: node-app
+      # For pods inside deployment....................template.........
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+        - name: node-app
+          image: yagyaadhikari/app-mongo-node:4.0.0
+          env:
+            - name: MONGO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: "mongo-config"
+                  key: MONGO_HOST
+
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: "mongo-config"
+                  key: MONGO_PORT
+
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: service-node-app #...
+# spec:
+#   ports:
+#     - name: http
+#       port: 8080
+#       targetPort: 3000
+#   selector:
+#     app: node-app #...
+#   type: LoadBalancer
